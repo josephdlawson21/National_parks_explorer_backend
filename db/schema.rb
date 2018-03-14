@@ -18,6 +18,11 @@ ActiveRecord::Schema.define(version: 20180312193105) do
   create_table "parks", force: :cascade do |t|
     t.string "name"
     t.string "parkCode"
+    t.string "state"
+    t.string "image"
+    t.string "designation"
+    t.string "latLong"
+    t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
