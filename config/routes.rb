@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/parks/frontPageArticles', to: 'parks#frontPage'
   get '/parks', to: 'parks#index'
   get '/parks/:parkCode', to: 'parks#show'
+  get '/state/:state', to: 'parks#state'
 
 
 end

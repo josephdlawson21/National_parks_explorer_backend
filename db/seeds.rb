@@ -8,7 +8,14 @@ require 'byebug'
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-json = ActiveSupport::JSON.decode(File.read('db/data.json'))
+# json = ActiveSupport::JSON.decode(File.read('db/data.json'))
+
+
+data =
+
+
+
+byebug
 
 json['data'].map do |item|
   Park.create(name: item['name'],
