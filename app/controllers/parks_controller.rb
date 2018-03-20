@@ -1,3 +1,5 @@
+require_relative './secrets.rb'
+
 class ParksController < ApplicationController
   def index
     # called by the state view
@@ -5,18 +7,26 @@ class ParksController < ApplicationController
 
   def show
     # called by the park view
-    park = Park.find_by(parkCode: params['parkCode'])
+    park_url = "https://developer.nps.gov/api/v1/parks?parkCode=" + params['parkCode'] + "&limit=10000&fields=images&api_key=" + api_key
+    events_url = "https://developer.nps.gov/api/v1/events?parkCode=" + params['parkCode'] + "&limit=10&api_key=" + api_key
+    places_url = "https://developer.nps.gov/api/v1/places?parkCode=" + params['parkCode'] + "&limit=10&api_key=" + api_key
 
-    render json: park
+    park = RestClient.get park_url
+    events = RestClient.get events_url
+    places = RestClient.get places_url
+
+    result = {park: JSON.parse(park), events: JSON.parse(events), places: JSON.parse(places)}
+
+    render json: result
   end
 
   def frontPage
-    articles = RestClient.get "https://developer.nps.gov/api/v1/articles?limit=7&api_key=R7qhvnG45YlTSKHI5IrQsqDsMjR0VRaqZPTmVZky"
+    articles = RestClient.get "https://developer.nps.gov/api/v1/articles?limit=7&api_key=" + api_key
     render json: articles
   end
 
   def state
-    url = "https://developer.nps.gov/api/v1/parks?stateCode=" + params['state'] + "&limit=10000&fields=images&api_key=R7qhvnG45YlTSKHI5IrQsqDsMjR0VRaqZPTmVZky"
+    url = "https://developer.nps.gov/api/v1/parks?stateCode=" + params['state'] + "&limit=10000&fields=images&api_key=" + api_key
     state_parks = RestClient.get url
     render json: state_parks
   end

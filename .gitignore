@@ -13,4 +13,6 @@
 !/log/.keep
 !/tmp/.keep
 
+*secrets.rb
+
 .byebug_history
