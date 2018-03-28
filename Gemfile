@@ -25,6 +25,8 @@ gem 'puma', '~> 3.7'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors'
 
+gem 'dotenv-rails', groups: [:development, :production]
+
 gem 'rest-client'
 
 group :development, :test do
@@ -43,7 +45,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :production do
-  gem 'dotenv-rails'
 
   gem 'rails_12factor'
 

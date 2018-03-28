@@ -23,7 +23,8 @@ class ParksController < ApplicationController
 
   def frontPage
     api_key = ENV["api_key"]
-    articles = RestClient.get "https://developer.nps.gov/api/v1/articles?limit=7&api_key=" + api_key
+    url = "https://developer.nps.gov/api/v1/articles?limit=7&api_key=" + api_key
+    articles = RestClient.get url
     render json: articles
   end
 
