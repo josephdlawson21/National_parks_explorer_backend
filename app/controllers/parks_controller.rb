@@ -1,4 +1,4 @@
-api_key = "lol"
+api_key = ENV["api_key"]
 
 class ParksController < ApplicationController
   def index
