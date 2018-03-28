@@ -1,4 +1,4 @@
-
+api_key = "lol"
 
 class ParksController < ApplicationController
   def index
