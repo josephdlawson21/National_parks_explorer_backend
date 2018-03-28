@@ -1,4 +1,4 @@
-require_relative './secrets.rb'
+
 
 class ParksController < ApplicationController
   def index
@@ -12,7 +12,7 @@ class ParksController < ApplicationController
     places_url = "https://developer.nps.gov/api/v1/places?parkCode=" + params['parkCode'] + "&limit=10&api_key=" + api_key
 
     park = RestClient.get park_url
-    events = RestClient.get events_url
+    events = RestClient.get events_urlcd
     places = RestClient.get places_url
 
     result = {park: JSON.parse(park), events: JSON.parse(events), places: JSON.parse(places)}
