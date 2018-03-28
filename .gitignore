@@ -16,3 +16,5 @@
 *secrets.rb
 
 .byebug_history
+
+*.env
