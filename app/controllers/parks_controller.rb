@@ -13,7 +13,7 @@ class ParksController < ApplicationController
     places_url = "https://developer.nps.gov/api/v1/places?parkCode=" + params['parkCode'] + "&limit=10&api_key=" + api_key
 
     park = RestClient.get park_url
-    events = RestClient.get events_urlcd
+    events = RestClient.get events_url
     places = RestClient.get places_url
 
     result = {park: JSON.parse(park), events: JSON.parse(events), places: JSON.parse(places)}
