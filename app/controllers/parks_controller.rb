@@ -31,4 +31,10 @@ class ParksController < ApplicationController
     render json: state_parks
   end
 
+  def search
+    url = "https://developer.nps.gov/api/v1/parks?q=" + params['search'] + "&limit=10&fields=images&api_key=" + api_key
+    state_parks = RestClient.get url
+    render json: state_parks
+  end
+
 end

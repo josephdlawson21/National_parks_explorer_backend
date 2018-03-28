@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get '/parks', to: 'parks#index'
   get '/parks/:parkCode', to: 'parks#show'
   get '/state/:state', to: 'parks#state'
+  get '/parks/search/:search', to: 'parks#search'
+
 
 
 end
