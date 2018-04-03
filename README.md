@@ -1,24 +1,3 @@
-# README
+## National Parks Explorer backend
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This is a Rails API for my [National Parks Explorer](https://github.com/josephdlawson21/national_parks_explorer_frontend). The Rails API utilizes RestClient to make calls to the National Parks Service API.
